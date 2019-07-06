@@ -17,7 +17,8 @@
 	"keywords": [
 		"nextjs",
 		"express",
-		"@testing-library/react"
+		"@testing-library/react",
+		"next-css"
 	],
 	"author": "Michael Alvado Heimbach",
 	"license": "MIT",
@@ -26,6 +27,7 @@
 	},
 	"homepage": "https://github.com/michael-alvado-heimbach/amazing-next#readme",
 	"dependencies": {
+		"@zeit/next-css": "^1.0.1",
 		"compression": "^1.7.4",
 		"express": "^4.17.1",
 		"next": "^8.1.0",
