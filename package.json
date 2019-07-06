@@ -1,0 +1,30 @@
+{
+	"name": "amazing-next",
+	"version": "1.0.0",
+	"description": "Next boilerplate with high performance, great accessibilities and best practices based on google lighthouse.",
+	"main": "pages/index.js",
+	"scripts": {
+		"dev": "next",
+		"build": "next build",
+		"start": "next start",
+		"test": "test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/michael-alvado-heimbach/amazing-next.git"
+	},
+	"keywords": [
+		"nextjs"
+	],
+	"author": "Michael Alvado Heimbach",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/michael-alvado-heimbach/amazing-next/issues"
+	},
+	"homepage": "https://github.com/michael-alvado-heimbach/amazing-next#readme",
+	"dependencies": {
+		"next": "^8.1.0",
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6"
+	}
+}
