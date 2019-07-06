@@ -18,6 +18,7 @@ class MyDocument extends Document {
 					<meta name="theme-color" content="#fff" />
 					<meta name="description" content="Amazing next Boilerplate" />
 					<meta name="keywords" content="HTML,CSS,Javascript,Nextjs" />
+					<link rel="manifest" href="/static/manifest.json" />
 				</Head>
 				<body>
 					<div id="app">

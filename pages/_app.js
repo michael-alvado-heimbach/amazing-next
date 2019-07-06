@@ -13,6 +13,23 @@ class MyApp extends App {
 		return { pageProps };
 	}
 
+	componentDidMount() {
+		this.registerServiceWorker();
+	}
+
+	registerServiceWorker = () => {
+		if ("serviceWorker" in navigator) {
+			navigator.serviceWorker
+				.register("/service-worker.js")
+				.then(registration => {
+					console.log("service worker registration successful");
+				})
+				.catch(err => {
+					console.warn("service worker registration failed", err.message);
+				});
+		}
+	};
+
 	componentDidCatch(error, errorInfo) {
 		super.componentDidCatch(error, errorInfo);
 	}

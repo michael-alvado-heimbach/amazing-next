@@ -5,10 +5,10 @@
 	"main": "pages/index.js",
 	"scripts": {
 		"dev": "node server.js",
-		"build": "next build",
+		"build": "rimraf .next && next build",
 		"start": "cross-env NODE_ENV=production node server.js",
 		"export": "rimraf out && next export",
-		"test": "cross-env NODE_ENV=test jest --coverage"
+		"test": "rimraf coverage && cross-env NODE_ENV=test jest --coverage"
 	},
 	"repository": {
 		"type": "git",
@@ -41,6 +41,7 @@
 		"babel-jest": "^24.8.0",
 		"cross-env": "^5.2.0",
 		"jest": "^24.8.0",
-		"rimraf": "^2.6.3"
+		"rimraf": "^2.6.3",
+		"sw-precache-webpack-plugin": "^0.11.5"
 	}
 }
