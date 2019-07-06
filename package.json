@@ -18,7 +18,8 @@
 		"nextjs",
 		"express",
 		"@testing-library/react",
-		"next-css"
+		"next-css",
+		"PWA"
 	],
 	"author": "Michael Alvado Heimbach",
 	"license": "MIT",
