@@ -9,6 +9,7 @@
 		"start": "cross-env NODE_ENV=production node server.js",
 		"export": "rimraf out && next export",
 		"test": "rimraf coverage && cross-env NODE_ENV=test jest --coverage",
+		"lint": "eslint . --fix",
 		"prettify": "prettier --write '**/*.js'"
 	},
 	"repository": {
@@ -40,8 +41,18 @@
 	"devDependencies": {
 		"@babel/core": "^7.5.0",
 		"@testing-library/react": "^8.0.4",
+		"babel-eslint": "^10.0.2",
 		"babel-jest": "^24.8.0",
 		"cross-env": "^5.2.0",
+		"eslint": "^6.0.1",
+		"eslint-config-airbnb": "^17.1.1",
+		"eslint-config-airbnb-base": "^13.2.0",
+		"eslint-config-prettier": "^6.0.0",
+		"eslint-plugin-import": "^2.18.0",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-prettier": "^3.1.0",
+		"eslint-plugin-react": "^7.14.2",
+		"eslint-plugin-react-hooks": "^1.6.1",
 		"husky": "^3.0.0",
 		"jest": "^24.8.0",
 		"jest-css-modules": "^2.1.0",
@@ -52,7 +63,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "pretty-quick --staged --check && npm test"
+			"pre-commit": "pretty-quick --staged --check && npm run lint && npm test"
 		}
 	}
 }

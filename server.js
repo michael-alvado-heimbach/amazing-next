@@ -24,21 +24,19 @@ function handleMiddleware(server) {
   server.use(compression());
 }
 
-function handleRoute(server, app) {
+function handleRoute(server, appVariable) {
   server.get('/service-worker.js', (request, response) => {
-    handleServiceWorker(request, response, app);
+    handleServiceWorker(request, response, appVariable);
   });
 
-  server.get('*', (request, response) => {
-    return handle(request, response);
-  });
+  server.get('*', (request, response) => handle(request, response));
 }
 
-function handleServiceWorker(request, response, app) {
+function handleServiceWorker(request, response, appVariable) {
   const parsedUrl = parse(request.url, true);
   const { pathname } = parsedUrl;
   const filePath = join(__dirname, '.next', pathname);
-  app.serveStatic(request, response, filePath);
+  appVariable.serveStatic(request, response, filePath);
 }
 
 function handleListen(server) {

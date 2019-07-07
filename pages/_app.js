@@ -21,7 +21,7 @@ class MyApp extends App {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
         .register('/service-worker.js')
-        .then(registration => {
+        .then(() => {
           console.log('service worker registration successful');
         })
         .catch(err => {
