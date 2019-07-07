@@ -1,4 +1,7 @@
+import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheets } from '@material-ui/styles';
+import theme from '../utils/theme';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -15,6 +18,7 @@ class MyDocument extends Document {
           <meta name='theme-color' content='#fff' />
           <meta name='description' content='Amazing next Boilerplate' />
           <meta name='keywords' content='HTML,CSS,Javascript,Nextjs' />
+          <meta name='theme-color' content={theme.palette.primary.main} />
           <link rel='manifest' href='/static/manifest.json' />
         </Head>
         <body>
@@ -32,5 +36,27 @@ class MyDocument extends Document {
     );
   }
 }
+
+MyDocument.getInitialProps = async ctx => {
+  const sheets = new ServerStyleSheets();
+  const originalRenderPage = ctx.renderPage;
+
+  ctx.renderPage = () =>
+    originalRenderPage({
+      enhanceApp: App => props => sheets.collect(<App {...props} />),
+    });
+
+  const initialProps = await Document.getInitialProps(ctx);
+
+  return {
+    ...initialProps,
+    styles: (
+      <React.Fragment>
+        {initialProps.styles}
+        {sheets.getStyleElement()}
+      </React.Fragment>
+    ),
+  };
+};
 
 export default MyDocument;

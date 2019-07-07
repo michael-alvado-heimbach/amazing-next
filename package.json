@@ -21,7 +21,9 @@
 		"express",
 		"@testing-library/react",
 		"next-css",
-		"PWA"
+		"PWA",
+		"material-ui",
+		"eslint"
 	],
 	"author": "Michael Alvado Heimbach",
 	"license": "MIT",
@@ -30,6 +32,9 @@
 	},
 	"homepage": "https://github.com/michael-alvado-heimbach/amazing-next#readme",
 	"dependencies": {
+		"@material-ui/core": "^4.2.0",
+		"@material-ui/icons": "^4.2.1",
+		"@material-ui/styles": "^4.2.0",
 		"@zeit/next-css": "^1.0.1",
 		"compression": "^1.7.4",
 		"express": "^4.17.1",
