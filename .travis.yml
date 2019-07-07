@@ -5,6 +5,8 @@ node_js:
 
 install:
   - npm install
+  - npm install --save-dev codecov
 
 script:
   - npm test
+  - ./node_modules/.bin/codecov --token="b89b8db6-bcb1-4dc0-b9ab-544b1c3af011"
