@@ -3,6 +3,9 @@
   <a href="https://travis-ci.com/michael-alvado-heimbach/amazing-next">
     <img src="https://travis-ci.com/michael-alvado-heimbach/amazing-next.svg?branch=master">
   </a>
+  <a href="https://codecov.io/gh/michael-alvado-heimbach/amazing-next">
+    <img src="https://codecov.io/gh/michael-alvado-heimbach/amazing-next/branch/master/graph/badge.svg">
+  </a>
   <a href='https://coveralls.io/github/michael-alvado-heimbach/amazing-next?branch=master'>
     <img src='https://coveralls.io/repos/github/michael-alvado-heimbach/amazing-next/badge.svg?branch=master' alt='Coverage Status' />
   </a>
