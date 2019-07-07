@@ -11,7 +11,7 @@
 		"test": "rimraf coverage && cross-env NODE_ENV=test jest --coverage",
 		"lint": "eslint . --fix",
 		"prettify": "prettier --write '**/*.js'",
-		"debug": "cross-env NODE_OPTIONS=--inspect next"
+		"debug": "cross-env NODE_OPTIONS=--inspect node server.js"
 	},
 	"repository": {
 		"type": "git",
