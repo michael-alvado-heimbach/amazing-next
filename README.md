@@ -12,6 +12,9 @@
   <a href="https://david-dm.org/michael-alvado-heimbach/amazing-next#info=devDependencies">
     <img src="https://david-dm.org/michael-alvado-heimbach/amazing-next/dev-status.svg">
   </a>
+  <a href="https://snyk.io/test/github/michael-alvado-heimbach/amazing-next?targetFile=package.json">
+    <img src="https://snyk.io/test/github/michael-alvado-heimbach/amazing-next/badge.svg?targetFile=package.json">
+  </a>
     <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
   </a>
