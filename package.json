@@ -10,7 +10,8 @@
 		"export": "rimraf out && next export",
 		"test": "rimraf coverage && cross-env NODE_ENV=test jest --coverage",
 		"lint": "eslint . --fix",
-		"prettify": "prettier --write '**/*.js'"
+		"prettify": "prettier --write '**/*.js'",
+		"debug": "cross-env NODE_OPTIONS=--inspect next"
 	},
 	"repository": {
 		"type": "git",
