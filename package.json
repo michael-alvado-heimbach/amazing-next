@@ -1,75 +1,79 @@
 {
-	"name": "amazing-next",
-	"version": "1.0.0",
-	"description": "Next boilerplate with high performance, great accessibilities and best practices based on google lighthouse.",
-	"main": "pages/index.js",
-	"scripts": {
-		"dev": "node server.js",
-		"build": "rimraf .next && next build",
-		"start": "cross-env NODE_ENV=production node server.js",
-		"export": "rimraf out && next export",
-		"test": "rimraf coverage && cross-env NODE_ENV=test jest --coverage",
-		"lint": "eslint . --fix",
-		"prettify": "prettier --write '**/*.js'",
-		"debug": "cross-env NODE_OPTIONS=--inspect node server.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/michael-alvado-heimbach/amazing-next.git"
-	},
-	"keywords": [
-		"nextjs",
-		"express",
-		"@testing-library/react",
-		"next-css",
-		"PWA",
-		"material-ui",
-		"eslint"
-	],
-	"author": "Michael Alvado Heimbach",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/michael-alvado-heimbach/amazing-next/issues"
-	},
-	"homepage": "https://github.com/michael-alvado-heimbach/amazing-next#readme",
-	"dependencies": {
-		"@material-ui/core": "^4.2.0",
-		"@material-ui/icons": "^4.2.1",
-		"@material-ui/styles": "^4.2.0",
-		"@zeit/next-css": "^1.0.1",
-		"compression": "^1.7.4",
-		"express": "^4.17.1",
-		"next": "^9.0.0",
-		"prop-types": "^15.7.2",
-		"react": "^16.8.6",
-		"react-dom": "^16.8.6"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.5.0",
-		"@testing-library/react": "^8.0.4",
-		"babel-eslint": "^10.0.2",
-		"babel-jest": "^24.8.0",
-		"cross-env": "^5.2.0",
-		"eslint": "^6.0.1",
-		"eslint-config-airbnb": "^17.1.1",
-		"eslint-config-airbnb-base": "^13.2.0",
-		"eslint-config-prettier": "^6.0.0",
-		"eslint-plugin-import": "^2.18.0",
-		"eslint-plugin-jsx-a11y": "^6.2.3",
-		"eslint-plugin-prettier": "^3.1.0",
-		"eslint-plugin-react": "^7.14.2",
-		"eslint-plugin-react-hooks": "^1.6.1",
-		"husky": "^3.0.0",
-		"jest": "^24.8.0",
-		"jest-css-modules": "^2.1.0",
-		"prettier": "^1.18.2",
-		"pretty-quick": "^1.11.1",
-		"rimraf": "^2.6.3",
-		"sw-precache-webpack-plugin": "^0.11.5"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "pretty-quick --staged --check && npm run lint && npm test"
-		}
-	}
+  "name": "amazing-next",
+  "version": "1.0.0",
+  "description": "Next boilerplate with high performance, great accessibilities and best practices based on google lighthouse.",
+  "main": "pages/index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "rimraf .next && next build",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "export": "rimraf out && next export",
+    "test": "rimraf coverage && cross-env NODE_ENV=test jest --coverage",
+    "lint": "eslint . --fix",
+    "prettify": "prettier --write '**/*.js'",
+    "debug": "cross-env NODE_OPTIONS=--inspect node server.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michael-alvado-heimbach/amazing-next.git"
+  },
+  "keywords": [
+    "nextjs",
+    "express",
+    "@testing-library/react",
+    "next-css",
+    "PWA",
+    "material-ui",
+    "eslint"
+  ],
+  "author": "Michael Alvado Heimbach",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michael-alvado-heimbach/amazing-next/issues"
+  },
+  "homepage": "https://github.com/michael-alvado-heimbach/amazing-next#readme",
+  "dependencies": {
+    "@material-ui/core": "^4.2.0",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/styles": "^4.2.0",
+    "@zeit/next-css": "^1.0.1",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "next": "^9.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "snyk": "^1.192.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@testing-library/react": "^8.0.4",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.8.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "husky": "^3.0.0",
+    "jest": "^24.8.0",
+    "jest-css-modules": "^2.1.0",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "rimraf": "^2.6.3",
+    "sw-precache-webpack-plugin": "^0.11.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged --check && npm run lint && npm test"
+    }
+  },
+  "snyk": true
 }
