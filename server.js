@@ -29,6 +29,10 @@ function handleRoute(server, appVariable) {
     handleServiceWorker(request, response, appVariable);
   });
 
+  server.get('/favicon.ico', (request, response) =>
+    response.status(200).sendFile('favicon.ico', { root: __dirname + '/static/images/' }),
+  );
+
   server.get('*', (request, response) => handle(request, response));
 }
 
