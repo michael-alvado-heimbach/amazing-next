@@ -40,6 +40,7 @@
 		"compression": "^1.7.4",
 		"express": "^4.17.1",
 		"next": "^9.1.4",
+		"next-offline": "^4.0.6",
 		"prop-types": "^15.7.2",
 		"react": "^16.12.0",
 		"react-dom": "^16.12.0"
@@ -66,10 +67,5 @@
 		"pretty-quick": "^2.0.1",
 		"rimraf": "^3.0.0",
 		"sw-precache-webpack-plugin": "^0.11.5"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "pretty-quick --staged --check && npm run lint && npm test"
-		}
 	}
 }
