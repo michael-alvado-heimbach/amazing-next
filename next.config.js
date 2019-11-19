@@ -1,34 +1,5 @@
-// const withCSS = require('@zeit/next-css');
-// const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
-
-// module.exports = withCSS({
-//   cssModules: true,
-//   webpack: config => {
-//     config.plugins.push(serviceWorkerSetup());
-
-//     const originalEntry = config.entry;
-//     config.entry = async () => {
-//       const entries = await originalEntry();
-//       return polyfillSetup(entries);
-//     };
-
-//     return config;
-//   },
-// });
-
-// function serviceWorkerSetup() {
-//   const setup = new SWPrecacheWebpackPlugin({
-//     verbose: true,
-//     staticFileGlobsIgnorePatterns: [/\.next\//],
-//     runtimeCaching: [
-//       {
-//         handler: 'networkFirst',
-//         urlPattern: /^https?.*/,
-//       },
-//     ],
-//   });
-//   return setup;
-// }
+const withCSS = require('@zeit/next-css');
+const withOffline = require('next-offline');
 
 async function polyfillSetup(entries) {
   if (entries['main.js'] && !entries['main.js'].includes('./utils/polyfills.js')) {
@@ -37,10 +8,9 @@ async function polyfillSetup(entries) {
   return entries;
 }
 
-const withOffline = require('next-offline');
-
 const nextConfig = {
   target: 'serverless',
+  cssModules: true,
   webpack: config => {
     const originalEntry = config.entry;
     config.entry = async () => {
@@ -76,4 +46,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withOffline(nextConfig);
+module.exports = withCSS(withOffline(nextConfig));
