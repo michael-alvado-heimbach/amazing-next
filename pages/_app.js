@@ -29,9 +29,9 @@ class MyApp extends App {
 
   registerServiceWorker = () => {
     if ('serviceWorker' in navigator) {
-      console.log(navigator);
       navigator.serviceWorker
-        .register('/service-worker.js', { scope: '/' })
+        .register('/service-worker.js')
+        // .register('/service-worker.js', { scope: '/' })
         .then(() => {
           console.log('service worker registration successful');
         })
