@@ -30,7 +30,7 @@ class MyApp extends App {
   registerServiceWorker = () => {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
-        .register('/service-worker.js', { scope: '/' })
+        .register('https://amazing-next-21flnfua5.now.sh/service-worker.js', { scope: '/' })
         .then(() => {
           console.log('service worker registration successful');
         })
