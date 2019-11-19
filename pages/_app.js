@@ -29,18 +29,6 @@ class MyApp extends App {
 
   registerServiceWorker = () => {
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.getRegistrations().then(registrations => {
-          for (let registration of registrations) {
-            registration.unregister().then(bool => {
-              console.log('unregister: ', bool);
-            });
-          }
-          window.location.reload();
-        });
-      });
-    }
-    if ('serviceWorker' in navigator) {
       navigator.serviceWorker
         .register(`/service-worker.js`, { scope: '/' })
         .then(() => {
