@@ -16,7 +16,7 @@ class MyApp extends App {
   }
 
   componentDidMount() {
-    this.registerServiceWorker();
+    // this.registerServiceWorker();
     this.removeServerSideInjectedCSS();
   }
 
