@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../utils/theme';
+import font from '../utils/font';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -17,6 +18,7 @@ class MyApp extends App {
 
   componentDidMount() {
     this.removeServerSideInjectedCSS();
+    font();
   }
 
   removeServerSideInjectedCSS = () => {
