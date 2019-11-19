@@ -9,7 +9,6 @@ async function polyfillSetup(entries) {
 }
 
 const nextConfig = {
-  target: 'serverless',
   cssModules: true,
   webpack: config => {
     const originalEntry = config.entry;
