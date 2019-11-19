@@ -2,6 +2,7 @@ import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/styles';
 import theme from '../utils/theme';
+import imageIcon from '../public/static/images/favicon.ico';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -21,7 +22,7 @@ class MyDocument extends Document {
           <meta name='theme-color' content={theme.palette.primary.main} />
           <link rel='manifest' href='static/manifest.json' />
           <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap' />
-          <link rel='icon' href='static/image/favicon.ico' />
+          <link rel='icon' href={imageIcon} />
         </Head>
         <body>
           <div id='app'>

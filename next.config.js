@@ -1,5 +1,6 @@
 const withCSS = require('@zeit/next-css');
 const withOffline = require('next-offline');
+const withImages = require('next-images');
 
 async function polyfillSetup(entries) {
   if (entries['main.js'] && !entries['main.js'].includes('./utils/polyfills.js')) {
@@ -45,4 +46,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withCSS(withOffline(nextConfig));
+module.exports = withImages(withCSS(withOffline(nextConfig)));
