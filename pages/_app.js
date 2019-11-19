@@ -28,10 +28,10 @@ class MyApp extends App {
   };
 
   registerServiceWorker = () => {
-    console.log(window.location.href);
+    const currentUrl = window.location.href;
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
-        .register('/service-worker.js', { scope: '/' })
+        .register(currentUrl + 'service-worker.js', { scope: '/' })
         .then(() => {
           console.log('service worker registration successful');
         })
