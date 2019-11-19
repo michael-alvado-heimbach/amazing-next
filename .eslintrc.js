@@ -75,5 +75,6 @@ module.exports = {
     'react/sort-comp': 0,
     'react/react-in-jsx-scope': 0,
     'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
+    'react/jsx-props-no-spreading': 0,
   },
 };
