@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../utils/theme';
-import { register, unregister } from 'next-offline/runtime';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -17,8 +16,7 @@ class MyApp extends App {
   }
 
   componentDidMount() {
-    // this.registerServiceWorker();
-    register();
+    this.registerServiceWorker();
     this.removeServerSideInjectedCSS();
   }
 

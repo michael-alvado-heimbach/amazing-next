@@ -1,37 +1,34 @@
 const withCSS = require('@zeit/next-css');
-// const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
-const withOffline = require('next-offline');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
-module.exports = withOffline(
-  withCSS({
-    cssModules: true,
-    webpack: config => {
-      // config.plugins.push(serviceWorkerSetup());
+module.exports = withCSS({
+  cssModules: true,
+  webpack: config => {
+    config.plugins.push(serviceWorkerSetup());
 
-      const originalEntry = config.entry;
-      config.entry = async () => {
-        const entries = await originalEntry();
-        return polyfillSetup(entries);
-      };
+    const originalEntry = config.entry;
+    config.entry = async () => {
+      const entries = await originalEntry();
+      return polyfillSetup(entries);
+    };
 
-      return config;
-    },
-  }),
-);
+    return config;
+  },
+});
 
-// function serviceWorkerSetup() {
-//   const setup = new SWPrecacheWebpackPlugin({
-//     verbose: true,
-//     staticFileGlobsIgnorePatterns: [/\.next\//],
-//     runtimeCaching: [
-//       {
-//         handler: 'networkFirst',
-//         urlPattern: /^https?.*/,
-//       },
-//     ],
-//   });
-//   return setup;
-// }
+function serviceWorkerSetup() {
+  const setup = new SWPrecacheWebpackPlugin({
+    verbose: true,
+    staticFileGlobsIgnorePatterns: [/\.next\//],
+    runtimeCaching: [
+      {
+        handler: 'networkFirst',
+        urlPattern: /^https?.*/,
+      },
+    ],
+  });
+  return setup;
+}
 
 async function polyfillSetup(entries) {
   if (entries['main.js'] && !entries['main.js'].includes('./utils/polyfills.js')) {
