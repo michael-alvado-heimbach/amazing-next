@@ -31,7 +31,8 @@ class MyApp extends App {
     const currentUrl = window.location.href;
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
-        .register(`${currentUrl}static/service-worker.js`, { scope: '/' })
+        .register(`${currentUrl}static/service-worker.js`)
+        // .register(`${currentUrl}static/service-worker.js`, { scope: '/' })
         .then(() => {
           console.log('service worker registration successful');
         })
