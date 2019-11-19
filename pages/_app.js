@@ -16,7 +16,6 @@ class MyApp extends App {
   }
 
   componentDidMount() {
-    // this.registerServiceWorker();
     this.removeServerSideInjectedCSS();
   }
 
@@ -26,19 +25,6 @@ class MyApp extends App {
       jssStyles.parentNode.removeChild(jssStyles);
     }
   };
-
-  // registerServiceWorker = () => {
-  //   if ('serviceWorker' in navigator) {
-  //     navigator.serviceWorker
-  //       .register(`/service-worker.js`, { scope: '/' })
-  //       .then(() => {
-  //         console.log('service worker registration successful');
-  //       })
-  //       .catch(err => {
-  //         console.warn('service worker registration failed', err.message);
-  //       });
-  //   }
-  // };
 
   componentDidCatch(error, errorInfo) {
     super.componentDidCatch(error, errorInfo);
