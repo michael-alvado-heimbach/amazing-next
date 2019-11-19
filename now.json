@@ -1,5 +1,0 @@
-{
-  "routes": [
-    { "src": "/service-worker.js", "dest": ".next/service-worker.js", "headers": { "cache-control": "no-cache" } }
-  ]
-}
