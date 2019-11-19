@@ -29,7 +29,7 @@ class MyApp extends App {
 
   registerServiceWorker = () => {
     if ('serviceWorker' in navigator) {
-      console.log('ada');
+      console.log(navigator);
       navigator.serviceWorker
         .register('/service-worker.js', { scope: '/' })
         .then(() => {
