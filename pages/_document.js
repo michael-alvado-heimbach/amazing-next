@@ -21,6 +21,7 @@ class MyDocument extends Document {
           <meta name='theme-color' content={theme.palette.primary.main} />
           <link rel='manifest' href='static/manifest.json' />
           <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap' />
+          <link rel='icon' type='image/x-icon' href='static/image/favicon.ico' />
         </Head>
         <body>
           <div id='app'>
