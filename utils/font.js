@@ -2,7 +2,7 @@ const FontFaceObserver = require('fontfaceobserver');
 
 const Fonts = () => {
   const link = document.createElement('link');
-  link.href = 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900';
+  link.href = 'https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap';
   link.rel = 'stylesheet';
 
   document.head.appendChild(link);
