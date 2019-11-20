@@ -41,9 +41,9 @@
 		"express": "^4.17.1",
 		"fontfaceobserver": "^2.1.0",
 		"next": "^9.1.4",
+		"next-babel-minify": "^1.0.0",
 		"next-images": "^1.2.0",
 		"next-offline": "^5.0.0-beta.10",
-		"next-optimized-images": "^2.5.4",
 		"prop-types": "^15.7.2",
 		"react": "^16.12.0",
 		"react-dom": "^16.12.0"
@@ -68,6 +68,7 @@
 		"jest-css-modules": "^2.1.0",
 		"prettier": "^1.19.1",
 		"pretty-quick": "^2.0.1",
-		"rimraf": "^3.0.0"
+		"rimraf": "^3.0.0",
+		"uglifyjs-webpack-plugin": "^2.2.0"
 	}
 }

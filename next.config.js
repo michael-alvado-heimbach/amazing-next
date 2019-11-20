@@ -1,7 +1,7 @@
 const withCSS = require('@zeit/next-css');
 const withOffline = require('next-offline');
 const withImages = require('next-images');
-const withOptimizedImages = require('next-optimized-images');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 async function polyfillSetup(entries) {
   if (entries['main.js'] && !entries['main.js'].includes('./utils/polyfills.js')) {
@@ -11,6 +11,9 @@ async function polyfillSetup(entries) {
 }
 
 const nextConfig = {
+  optimization: {
+    minimizer: [new UglifyJsPlugin({ extractComments: 'all' })],
+  },
   cssModules: true,
   webpack: config => {
     const originalEntry = config.entry;
@@ -47,4 +50,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withOptimizedImages(withImages(withCSS(withOffline(nextConfig))));
+module.exports = withImages(withCSS(withOffline(nextConfig)));
