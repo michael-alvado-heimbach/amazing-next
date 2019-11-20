@@ -1,7 +1,6 @@
 const withCSS = require('@zeit/next-css');
 const withOffline = require('next-offline');
 const withImages = require('next-images');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 async function polyfillSetup(entries) {
   if (entries['main.js'] && !entries['main.js'].includes('./utils/polyfills.js')) {
@@ -18,9 +17,6 @@ const nextConfig = {
       const entries = await originalEntry();
       return polyfillSetup(entries);
     };
-
-    config.optimization.minimizer = [];
-    config.optimization.minimizer.push(new OptimizeCSSAssetsPlugin({}));
 
     return config;
   },
