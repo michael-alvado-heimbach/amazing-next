@@ -1,5 +1,11 @@
 language: node_js
 
+addons:
+  chrome: stable
+
+before_install:
+  - npm install -g @lhci/cli@0.3.x
+
 node_js:
   - stable
 
@@ -8,5 +14,10 @@ install:
   - npm install --save-dev codecov
 
 script:
+  - npm run build
   - npm test
   - ./node_modules/.bin/codecov --token="b89b8db6-bcb1-4dc0-b9ab-544b1c3af011"
+
+after_success:
+  - lhci autorun --upload.target=temporary-public-storage
+  - lhci autorun --assert.preset=lighthouse:recommended
