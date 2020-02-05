@@ -4,7 +4,7 @@
 	"description": "Next boilerplate with high performance, great accessibilities and best practices based on google lighthouse.",
 	"main": "pages/index.js",
 	"scripts": {
-		"dev": "node server.js",
+		"dev": "cross-env NODE_ENV=development node server.js",
 		"build": "rimraf .next && next build",
 		"start": "cross-env NODE_ENV=production node server.js",
 		"export": "rimraf out && next export",

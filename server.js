@@ -3,11 +3,11 @@ const next = require('next');
 const compression = require('compression');
 const { join } = require('path');
 const { parse } = require('url');
-
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
+const { isNodeEnvDevelopment } = require('./utils/nodeFunctionsNotEs6');
 
 app.prepare().then(() => {
   const server = initializeServer();
@@ -44,8 +44,12 @@ function handleServiceWorker(request, response, appVariable) {
 }
 
 function handleListen(server) {
-  server.listen(port, err => {
-    if (err) throw err;
-    console.log(`> Ready on http://localhost:${port}`);
+  server.listen(port, error => {
+    if (error) {
+      throw error;
+    }
+    if (isNodeEnvDevelopment()) {
+      console.log(`> Ready on http://localhost:${port}`);
+    }
   });
 }
