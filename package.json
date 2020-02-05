@@ -1,6 +1,6 @@
 {
 	"name": "amazing-next",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Next boilerplate with high performance, great accessibilities and best practices based on google lighthouse.",
 	"main": "pages/index.js",
 	"scripts": {
