@@ -3,8 +3,10 @@ language: node_js
 node_js:
   - stable
 
+before_install:
+  - npm install -g @lhci/cli
+
 install:
-  - npm install -g @lhci/cli@0.3.x
   - npm install
   - npm install --save-dev codecov
 
@@ -14,7 +16,7 @@ script:
   - ./node_modules/.bin/codecov --token="b89b8db6-bcb1-4dc0-b9ab-544b1c3af011"
 
 after_success:
-  - lhci autorun --upload.target=temporary-public-storage --upload.token="$LHCI_SERVER_TOKEN"
+  - lhci autorun --rc-overrides.upload.target=temporary-public-storage
 
 addons:
   chrome: stable
