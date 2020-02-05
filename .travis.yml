@@ -19,5 +19,4 @@ script:
   - ./node_modules/.bin/codecov --token="b89b8db6-bcb1-4dc0-b9ab-544b1c3af011"
 
 after_success:
-  - lhci autorun --upload.target=temporary-public-storage
-  - lhci autorun --assert.preset=lighthouse:recommended
+  - lhci autorun --upload.target=temporary-public-storage --upload.token="$LHCI_SERVER_TOKEN"
